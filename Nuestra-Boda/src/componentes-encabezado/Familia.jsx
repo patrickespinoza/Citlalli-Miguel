@@ -3,16 +3,16 @@ import { motion } from "framer-motion";
 
 const Familia = ({
   padresNovia = [
-    "Nombre del papá de la novia",
-    "Nombre de la mamá de la novia",
+    "Jose Juan Sánchez Vasquez",
+    "Guadalupe Rugerio Aztatzi",
   ],
   padresNovio = [
-    "Nombre del papá del novio",
-    "Nombre de la mamá del novio",
+    "Leonides Muñoz Galicia",
+    "Monserrat Cuatecontzi Flores",
   ],
   padrinos = [
-    "Nombre del padrino",
-    "Nombre de la madrina",
+    "Victor Flores flores",
+    "Marisela Pilotzi Nava",
   ],
 }) => {
   const familias = [

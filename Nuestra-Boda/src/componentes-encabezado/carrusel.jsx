@@ -4,20 +4,27 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const Carousel = () => {
   const images = [
-    "/carrusel01.jpeg",
-    "/carusel02.jpeg",
-    "/carusel03.jpeg",
-    "/carusel04.jpeg",
-    "/carusel05.jpeg",
+    {
+      src: "/Carrusel01.jpg",
+      position: "center 1%",
+    },
+    {
+      src: "/Carrusel02.jpg",
+      position: "center 40%",
+    },
+    {
+      src: "/Carrusel03.jpg",
+      position: "center 25%",
+    },
   ];
 
   const [index, setIndex] = useState(0);
 
   /* Precarga de imágenes */
   useEffect(() => {
-    images.forEach((src) => {
+    images.forEach((imageItem) => {
       const image = new Image();
-      image.src = src;
+      image.src = imageItem.src;
     });
   }, []);
 
@@ -196,17 +203,17 @@ const Carousel = () => {
           <div
             className="
               relative
-              h-[430px]
+              h-[580px]
               overflow-hidden
               bg-[#E9E4D9]
               sm:h-[560px]
-              md:h-[650px]
+              md:h-[950px]
             "
           >
             <AnimatePresence mode="wait">
               <motion.img
                 key={index}
-                src={images[index]}
+                src={images[index].src}
                 alt={`Momento de Citlalli y Miguel ${index + 1}`}
                 initial={{
                   opacity: 0,
@@ -229,8 +236,10 @@ const Carousel = () => {
                   h-full
                   w-full
                   object-cover
-                  object-center
                 "
+                style={{
+                  objectPosition: images[index].position,
+                }}
               />
             </AnimatePresence>
 
@@ -335,10 +344,10 @@ const Carousel = () => {
                 gap-2.5
               "
             >
-              {images.map((_, imageIndex) => (
+              {images.map((imageItem, imageIndex) => (
                 <motion.button
                   type="button"
-                  key={imageIndex}
+                  key={imageItem.src}
                   onClick={() => selectImage(imageIndex)}
                   aria-label={`Ver imagen ${imageIndex + 1}`}
                   animate={{
@@ -376,7 +385,9 @@ const Carousel = () => {
           "
         >
           {String(index + 1).padStart(2, "0")}
+
           <span className="mx-2 text-white/40">/</span>
+
           {String(images.length).padStart(2, "0")}
         </p>
       </motion.div>

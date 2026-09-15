@@ -7,6 +7,7 @@ import Confirmacion from "./componentes-encabezado/Confirmacion";
 import Musica from "./componentes-encabezado/musica";
 import Familia from "./componentes-encabezado/Familia";
 import Itinerario from "./componentes-encabezado/Itinerario";
+import FraseSeparador from "./componentes-encabezado/frase";
 
 export default function Intinerario() {
   return (
@@ -27,6 +28,8 @@ export default function Intinerario() {
       <Carousel />
 
       <Regalos />
+
+      <FraseSeparador/>
 
       <Confirmacion />
     </div>

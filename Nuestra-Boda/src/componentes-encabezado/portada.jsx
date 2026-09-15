@@ -6,7 +6,7 @@ export default function Portada() {
 
       {/* FOTO */}
       <img
-        src="/portada.png"
+        src="/portada.jpg"
         alt="Citlalli y Miguel"
         className="absolute inset-0 w-full h-full object-cover object-[center_35%]"
       />

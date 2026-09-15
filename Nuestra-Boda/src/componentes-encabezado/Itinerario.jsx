@@ -6,20 +6,16 @@ const Itinerario = ({
   subtitulo = "Acompáñanos en cada momento de este día especial",
   eventos = [
     {
-      hora: "00:00 PM",
-      actividad: "Ceremonia religiosa",
+      hora: "12:00 PM",
+      actividad: "Misa Religiosa",
     },
     {
-      hora: "00:00 PM",
-      actividad: "Recepción",
+      hora: "2:00 PM",
+      actividad: "Casamiento por el civil ",
     },
     {
-      hora: "00:00 PM",
-      actividad: "Cena",
-    },
-    {
-      hora: "00:00 PM",
-      actividad: "Celebración",
+      hora: "4:00 PM",
+      actividad: "Recepción en el salón Cryda's",
     },
   ],
 }) => {
