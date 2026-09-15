@@ -8,7 +8,7 @@ export default function Portada() {
       <img
         src="/portada.jpg"
         alt="Citlalli y Miguel"
-        className="absolute inset-0 w-full h-full object-cover object-[40%_35%]"
+        className="absolute inset-0 w-full h-full object-cover object-[20%_35%]"
       />
 
       {/* Degradado para mejorar lectura */}
