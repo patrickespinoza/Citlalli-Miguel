@@ -8,6 +8,7 @@ import Musica from "./componentes-encabezado/musica";
 import Familia from "./componentes-encabezado/Familia";
 import Itinerario from "./componentes-encabezado/Itinerario";
 import FraseSeparador from "./componentes-encabezado/frase";
+import FraseCapitulo from "./componentes-encabezado/Fraseprimera";
 
 export default function Intinerario() {
   return (
@@ -18,6 +19,8 @@ export default function Intinerario() {
       <Portada />
 
       <Contador />
+
+      <FraseCapitulo/>
 
       <Celebracion />
 
