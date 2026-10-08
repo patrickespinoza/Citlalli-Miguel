@@ -12,7 +12,7 @@ const Celebracion = ({
     direccion:
       "Av. 5 de Mayo 51, Séptima Secc., 90670 Contla, Tlax.",
     ubicacion: "https://maps.app.goo.gl/FDdQNShX7M96XGYL7",
-    imagen: "/iglesia.jpg",
+    imagen: "/iglesia1.jpg",
     hora: "12:00 p. m.",
   },
 
