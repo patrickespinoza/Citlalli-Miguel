@@ -45,7 +45,7 @@ const Carousel = () => {
   }, []);
 
   // ==========================================
-  // CAMBIO AUTOMÁTICO CADA 4.5 SEGUNDOS
+  // CAMBIO AUTOMÁTICO
   // ==========================================
 
   useEffect(() => {
@@ -57,7 +57,7 @@ const Carousel = () => {
   }, []);
 
   // ==========================================
-  // CONTROLES DE NAVEGACIÓN
+  // CONTROLES
   // ==========================================
 
   const nextImage = () => {
@@ -88,9 +88,7 @@ const Carousel = () => {
         lg:py-28
       "
     >
-      {/* ======================================
-          MARCOS DECORATIVOS EXTERIORES
-      ====================================== */}
+      {/* MARCOS DECORATIVOS EXTERIORES */}
 
       <div
         className="
@@ -114,9 +112,7 @@ const Carousel = () => {
         "
       />
 
-      {/* ======================================
-          RAMA SUPERIOR IZQUIERDA
-      ====================================== */}
+      {/* RAMA SUPERIOR IZQUIERDA */}
 
       <div
         className="
@@ -135,17 +131,12 @@ const Carousel = () => {
         <div className="absolute left-1/2 top-0 h-full w-px rotate-45 bg-white" />
 
         <span className="absolute left-[43%] top-[20%] h-9 w-4 -rotate-45 rounded-[100%_0_100%_0] bg-white" />
-
         <span className="absolute left-[57%] top-[31%] h-10 w-5 rotate-45 rounded-[100%_0_100%_0] bg-white" />
-
         <span className="absolute left-[30%] top-[43%] h-10 w-5 -rotate-45 rounded-[100%_0_100%_0] bg-white" />
-
         <span className="absolute left-[45%] top-[58%] h-11 w-5 rotate-45 rounded-[100%_0_100%_0] bg-white" />
       </div>
 
-      {/* ======================================
-          RAMA INFERIOR DERECHA
-      ====================================== */}
+      {/* RAMA INFERIOR DERECHA */}
 
       <div
         className="
@@ -164,17 +155,12 @@ const Carousel = () => {
         <div className="absolute left-1/2 top-0 h-full w-px rotate-45 bg-white" />
 
         <span className="absolute left-[43%] top-[20%] h-9 w-4 -rotate-45 rounded-[100%_0_100%_0] bg-white" />
-
         <span className="absolute left-[57%] top-[31%] h-10 w-5 rotate-45 rounded-[100%_0_100%_0] bg-white" />
-
         <span className="absolute left-[30%] top-[43%] h-10 w-5 -rotate-45 rounded-[100%_0_100%_0] bg-white" />
-
         <span className="absolute left-[45%] top-[58%] h-11 w-5 rotate-45 rounded-[100%_0_100%_0] bg-white" />
       </div>
 
-      {/* ======================================
-          CONTENIDO PRINCIPAL
-      ====================================== */}
+      {/* CONTENIDO PRINCIPAL */}
 
       <motion.div
         initial={{
@@ -200,9 +186,7 @@ const Carousel = () => {
           max-w-6xl
         "
       >
-        {/* ==================================
-            ENCABEZADO
-        ================================== */}
+        {/* ENCABEZADO */}
 
         <div className="mx-auto mb-12 max-w-3xl text-center sm:mb-14">
           <p
@@ -233,7 +217,7 @@ const Carousel = () => {
             Momentos
           </h2>
 
-          {/* SEPARADOR DECORATIVO */}
+          {/* SEPARADOR */}
 
           <div className="mt-8 flex items-center justify-center gap-3">
             <span className="h-px w-14 bg-white/50 sm:w-20" />
@@ -255,7 +239,7 @@ const Carousel = () => {
         </div>
 
         {/* ==================================
-            MARCO PRINCIPAL DEL CARRUSEL
+            MARCO PRINCIPAL
         ================================== */}
 
         <div
@@ -295,15 +279,22 @@ const Carousel = () => {
           />
 
           {/* ==================================
-              IMAGEN ADAPTABLE
+              CONTENEDOR CON ALTURA FIJA
+              EVITA MOVIMIENTOS EN LA PÁGINA
           ================================== */}
 
           <div
             className="
               relative
+              flex
+              h-[500px]
               w-full
+              items-center
+              justify-center
               overflow-hidden
               bg-[#E9E4D9]
+              sm:h-[650px]
+              lg:h-[750px]
             "
           >
             <AnimatePresence mode="wait" initial={false}>
@@ -325,22 +316,25 @@ const Carousel = () => {
                   ease: "easeOut",
                 }}
                 className="
-                  relative
+                  absolute
+                  inset-0
                   flex
+                  h-full
                   w-full
                   items-center
                   justify-center
                 "
               >
+                {/* IMAGEN COMPLETA SIN RECORTES */}
+
                 <img
                   src={images[index].src}
                   alt={`Momento de Citlalli y Miguel ${index + 1}`}
                   loading={index === 0 ? "eager" : "lazy"}
                   className="
                     block
-                    h-auto
+                    h-full
                     w-full
-                    max-h-[85vh]
                     object-contain
                   "
                   style={{
@@ -353,7 +347,7 @@ const Carousel = () => {
         </div>
 
         {/* ==================================
-            CONTROLES DEBAJO DEL MARCO
+            CONTROLES FUERA DEL MARCO
         ================================== */}
 
         <div
@@ -437,6 +431,7 @@ const Carousel = () => {
                   key={imageItem.src}
                   onClick={() => selectImage(imageIndex)}
                   aria-label={`Ver imagen ${imageIndex + 1}`}
+                  aria-current={index === imageIndex ? "true" : undefined}
                   animate={{
                     width: index === imageIndex ? 28 : 9,
                     backgroundColor:
@@ -499,9 +494,7 @@ const Carousel = () => {
             </motion.button>
           </div>
 
-          {/* ==================================
-              NUMERACIÓN
-          ================================== */}
+          {/* NUMERACIÓN */}
 
           <p
             className="
