@@ -11,7 +11,7 @@ const Familia = ({
     "Monserrat Cuatecontzi Flores",
   ],
   padrinos = [
-    "Victor Flores flores",
+    "Victor Flores Flores",
     "Marisela Pilotzi Nava",
   ],
 }) => {
