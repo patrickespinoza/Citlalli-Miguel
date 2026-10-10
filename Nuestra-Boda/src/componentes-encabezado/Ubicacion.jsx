@@ -20,8 +20,8 @@ const Celebracion = ({
   civil = {
     nombre: "Boda civil",
     direccion:
-      "Av. 5 de Mayo 18, Santa María Tlacatecpa, Séptima Secc, 90670 Contla, Tlax.",
-    ubicacion: "https://maps.app.goo.gl/wPFZwu7rYg6gY99u9",
+      "Av. 5 de Mayo 25, Séptima Secc, 90670 Contla, Tlax.",
+    ubicacion: "https://maps.app.goo.gl/bJcpFAwhupqex8Hi7",
     hora: "2:00 p. m.",
   },
 
